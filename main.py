@@ -1,5 +1,10 @@
 import os
 # from kaggle_secrets import UserSecretsClient
+from google.adk.agents import Agent
+from google.adk.models.google_llm import Gemini
+from google.adk.runners import InMemoryRunner
+from google.adk.tools import google_search
+from google.genai import types
 
 from adk.models import GeminiModel
 
@@ -21,10 +26,5 @@ except Exception as e:
         f"🔑 Authentication Error: Please make sure you have added 'GOOGLE_API_KEY' to your Kaggle secrets. Details: {e}"
     )
 
-from google.adk.agents import Agent
-from google.adk.models.google_llm import Gemini
-from google.adk.runners import InMemoryRunner
-from google.adk.tools import google_search
-from google.genai import types
 
 print("✅ ADK components imported successfully.")
